@@ -4,7 +4,7 @@ import { popularMoviesUrl } from '../helpers/apiEndpoints';
 
 const fetchMovies = () => dispatch => {
   axios.get(popularMoviesUrl).then(res => {
-    console.log(res);
+    dispatch(getMovies(res.data.results))
   })
 };
 

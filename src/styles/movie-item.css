@@ -1,0 +1,14 @@
+.movie-item {
+  width: 300px;
+  border: 1px solid #a5a5a5;
+  margin: 5px;
+}
+
+.movie-item-img {
+  width: 300px;
+  object-fit: cover;
+}
+
+.movie-item-body {
+  padding: 0 10px;
+}

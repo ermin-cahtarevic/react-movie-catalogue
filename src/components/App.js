@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/App.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import MovieList from '../containers/MovieList';
 import Movie from '../containers/Movie';
