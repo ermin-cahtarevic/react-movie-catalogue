@@ -1,8 +1,9 @@
 import React from 'react';
 import '../styles/movie-item.css';
 import { withRouter } from 'react-router';
+import { genres } from '../helpers/genres';
 
-const imgBaseUrl = 'https://image.tmdb.org/t/p/w500'
+const imgBaseUrl = 'https://image.tmdb.org/t/p/w500';
 
 const MovieItem = props => {
   const { movie } = props;
@@ -14,6 +15,11 @@ const MovieItem = props => {
       <div className="movie-item-body">
         <h3>{movie.title}</h3>
         <p>{movie.overview}</p>
+        {
+          movie.genre_ids.map(gId => (
+            <span className="movie-item-genre">{genres[gId]}</span>
+          ))
+        }
       </div>
     </div>
   )

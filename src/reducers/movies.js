@@ -1,5 +1,6 @@
 const GET_MOVIES = 'GET_MOVIES';
 const GET_MOVIE = 'GET_MOVIE';
+const CLEAR_MOVIE = 'CLEAR_MOVIE';
 
 const initialState = {
   movies: [],
@@ -18,6 +19,11 @@ const moviesReducer = (state = initialState, action) => {
         ...state,
         movie: action.payload,
       };
+    case CLEAR_MOVIE:
+      return {
+        ...state,
+        movie: {},
+      }
     default:return state;
   }
 };
