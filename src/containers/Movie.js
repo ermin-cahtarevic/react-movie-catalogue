@@ -3,18 +3,18 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import fetchMovie from '../actions/fetchMovie';
 
-const imgBaseUrl = 'https://image.tmdb.org/t/p/w500'
+const imgBaseUrl = 'https://image.tmdb.org/t/p/w500';
 
 const Movie = ({ movies, match, fetchMovie }) => {
   const { params: { id } } = match;
   const { movie } = movies;
-  useEffect(() => { 
+  useEffect(() => {
     fetchMovie(id);
   }, [fetchMovie, id]);
 
   const div = (
     <div>Loading</div>
-  )
+  );
 
   const element = (
     <div>

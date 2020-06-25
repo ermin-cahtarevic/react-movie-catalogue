@@ -5,7 +5,7 @@ const CLEAR_MOVIE = 'CLEAR_MOVIE';
 const initialState = {
   movies: [],
   movie: {},
-}
+};
 
 const moviesReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -23,8 +23,8 @@ const moviesReducer = (state = initialState, action) => {
       return {
         ...state,
         movie: {},
-      }
-    default:return state;
+      };
+    default: return state;
   }
 };
 
