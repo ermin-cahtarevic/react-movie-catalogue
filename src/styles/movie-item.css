@@ -24,6 +24,7 @@
 
 .movie-item-img {
   width: 100%;
+  height: 196px;
   object-fit: cover;
   border-radius: 7px 7px 0 0;
 }

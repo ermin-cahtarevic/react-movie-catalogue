@@ -3,8 +3,11 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import YouTube from 'react-youtube';
 import PropTypes from 'prop-types';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import fetchMovie from '../actions/fetchMovie';
 import Navbar from '../components/Navbar';
+import Recomendations from '../components/Recomendations';
 import fetchTrailerId from '../actions/fetchTrailerId';
 import '../styles/movie.css';
 
@@ -28,11 +31,21 @@ const Movie = ({
     },
   };
 
+  let date = 'Loading...'
+
+  const getDate = () => {
+    if (movie.releaseDate) {
+      const dateSplit = movie.releaseDate.split('-');
+      date = `${dateSplit[2]} / ${dateSplit[1]} / ${dateSplit[0]}`;
+    }
+    return date;
+  };
+  
   return (
-    <div>
+    <div className="movie-page">
       <Navbar />
       <div className="movie-assets">
-        <img src={imgBaseUrl + movie.poster_path} alt={movie.title} className="movie-poster" />
+        <img src={imgBaseUrl + movie.posterPath} alt={movie.title} className="movie-poster" />
         <YouTube
           videoId={movies.trailerId}
           opts={opts}
@@ -40,10 +53,43 @@ const Movie = ({
           className="trailer-video"
         />
       </div>
-      <div className="movie-item-body">
-        <h3>{movie.title}</h3>
-        <p>{movie.overview}</p>
+      <div className="movie-details-body">
+        <div className="movie-details-first-line">
+          <h3 className="movie-details-title">{movie.title}</h3>
+          <div className="movie-details-rating">
+            <FontAwesomeIcon
+              icon={faStar}
+              className="star-icon"
+            />
+            {
+              movie.voteAverage > 0 ? (
+                movie.voteAverage
+              ) :(
+                'Upcoming'
+              )
+            }
+          </div>
+        </div>
+        {
+          movie.tagline ? (
+            <p className="movie-details-tagline">"{movie.tagline}"</p>
+          ) : null
+        }
+        <p className="movie-details-overview">{movie.overview}</p>
+        <div>
+          {
+            movie.genres ? (
+            movie.genres.map(genre => (
+              <span key={genre.id} className="movie-details-genre">{genre.name}</span>
+            ))) : (
+              <div>Loading...</div>
+            )
+          }
+        </div>
+        <a href={movie.homepage} className="movie-details-homepage">Movie homepage</a>
+        <div className="movie-details-release-date">Release date - {getDate()}</div>
       </div>
+      <Recomendations id={movie.id} />
     </div>
   );
 };

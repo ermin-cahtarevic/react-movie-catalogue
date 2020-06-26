@@ -1,3 +1,8 @@
+.movie-page {
+  background-color: #333;
+  min-height: 100vh;
+}
+
 .movie-assets {
   display: flex;
 }
@@ -13,4 +18,72 @@
 .trailer-video {
   width: 100%;
   height: 100%;
+}
+
+.movie-details-body {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 25px 0;
+}
+
+.movie-details-first-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.movie-details-rating {
+  font-size: 24px;
+  color: white;
+  margin-right: 25px;
+}
+
+.movie-details-rating .star-icon {
+  font-size: 25px;
+  margin-right: 10px;
+}
+
+.movie-details-title {
+  color: white;
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+
+.movie-details-tagline {
+  color: #ddd;
+  margin: 5px 0 15px;
+  font-style: italic;
+}
+
+.movie-details-overview {
+  color: #ddd;
+  font-size: 17px;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.movie-details-genre {
+  display: inline-block;
+  background-color: white;
+  padding: 5px 10px;
+  margin: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.movie-details-homepage {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  margin: 20px 0 15px 5px;
+}
+
+.movie-details-homepage:hover {
+  color: #ddd;
+}
+
+.movie-details-release-date {
+  color: white;
+  padding: 5px;
 }
