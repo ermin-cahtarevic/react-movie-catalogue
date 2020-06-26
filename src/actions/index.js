@@ -1,6 +1,8 @@
 const GET_MOVIES = 'GET_MOVIES';
 const GET_MOVIE = 'GET_MOVIE';
 const CLEAR_MOVIE = 'CLEAR_MOVIE';
+const GET_TRAILER_ID = 'GET_TRAILER_ID';
+const CLEAR_TRAILER_ID = 'CLEAR_TRAILER_ID';
 
 const getMovies = movies => ({
   type: GET_MOVIES,
@@ -16,4 +18,13 @@ const clearMovie = () => ({
   type: CLEAR_MOVIE,
 });
 
-export { getMovies, getMovie, clearMovie };
+const getTrailerId = id => ({
+  type: GET_TRAILER_ID,
+  payload: id,
+});
+
+const clearTrailerId = () => ({
+  type: CLEAR_TRAILER_ID,
+})
+
+export { getMovies, getMovie, clearMovie, getTrailerId, clearTrailerId };

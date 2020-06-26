@@ -13,9 +13,6 @@ const MovieItem = ({ movie, history }) => {
 
   const genreList = movie.genre_ids.map(gId => genres[gId])
 
-  
-  console.log(genreList)
-
   return (
     <div
       className="movie-item"

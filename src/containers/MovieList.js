@@ -3,15 +3,16 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import fetchMovies from '../actions/fetchMovies';
 import MovieItem from '../components/MovieItem';
-import { clearMovie } from '../actions/index';
+import { clearMovie, clearTrailerId } from '../actions/index';
 import '../styles/movie-list.css';
 import Navbar from '../components/Navbar';
 
-const MovieList = ({ movies, fetchMovies, clearMovie }) => {
+const MovieList = ({ movies, fetchMovies, clearMovie, clearTrailerId }) => {
   useEffect(() => {
     fetchMovies();
     clearMovie();
-  }, [fetchMovies, clearMovie]);
+    clearTrailerId();
+  }, [fetchMovies, clearMovie, clearTrailerId]);
 
   return (
     <div className="movie-list">
@@ -45,6 +46,7 @@ const mapStateToProps = ({ movies }) => ({
 const mapDispatchToProps = dispatch => ({
   fetchMovies: () => dispatch(fetchMovies()),
   clearMovie: () => dispatch(clearMovie()),
+  clearTrailerId: () => dispatch(clearTrailerId()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(MovieList);

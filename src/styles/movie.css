@@ -1,0 +1,16 @@
+.movie-assets {
+  display: flex;
+}
+
+.movie-poster {
+  width: 25%;
+}
+
+.movie-trailer {
+  width: 75%;
+}
+
+.trailer-video {
+  width: 100%;
+  height: 100%;
+}
