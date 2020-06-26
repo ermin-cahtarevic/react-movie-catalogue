@@ -11,7 +11,7 @@ const imgBaseUrl = 'https://image.tmdb.org/t/p/w500';
 const MovieItem = ({ movie, history }) => {
   const showMovie = id => history.push(`/movie/${id}`);
 
-  const genreList = movie.genre_ids.map(gId => genres[gId])
+  const genreList = movie.genreIds.map(gId => genres[gId])
 
   return (
     <div
@@ -21,7 +21,7 @@ const MovieItem = ({ movie, history }) => {
       role="button"
       tabIndex={0}
     >
-      <img src={imgBaseUrl + movie.backdrop_path} alt={movie.title} className="movie-item-img" />
+      <img src={imgBaseUrl + movie.backdropPath} alt={movie.title} className="movie-item-img" />
       <div className="movie-item-body">
         <h3>{movie.title}</h3>
         <p>{movie.overview}</p>
@@ -29,20 +29,20 @@ const MovieItem = ({ movie, history }) => {
       <div className="genre-list">
         {
           /* eslint-disable react/prop-types */
-          genreList.slice(0, 3).map(genreType => (
+          genreList.map(genreType => (
             <span key={genreType} className="movie-item-genre">{genreType}</span>
           ))
           /* eslint-enable react/prop-types */
         }
       </div>
       {
-        movie.vote_average > 0 ? (
+        movie.voteAverage > 0 ? (
           <p className="rating">
             <FontAwesomeIcon
               icon={faStar}
               className="star-icon"
             />
-            {movie.vote_average}
+            {movie.voteAverage}
           </p>
         ) : (
           <p className="rating">Upcoming</p>

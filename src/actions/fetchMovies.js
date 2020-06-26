@@ -1,10 +1,13 @@
 import axios from 'axios';
 import { getMovies } from './index';
 import { popularMoviesUrl } from '../helpers/apiEndpoints';
+import { filterMovies } from '../helpers/filterData';
 
 const fetchMovies = () => dispatch => {
   axios.get(popularMoviesUrl).then(res => {
-    dispatch(getMovies(res.data.results));
+    const filtered = filterMovies(res.data.results)
+    console.log(filtered)
+    dispatch(getMovies(filtered));
   });
 };
 
