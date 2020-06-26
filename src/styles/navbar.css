@@ -2,7 +2,7 @@
 
 .navbar {
   height: 90px;
-  background-color: #333333;
+  background-color: #333;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,5 +18,5 @@
 }
 
 .logo:hover {
-  color: #dddddd;
+  color: #ddd;
 }

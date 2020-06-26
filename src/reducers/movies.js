@@ -31,12 +31,12 @@ const moviesReducer = (state = initialState, action) => {
       return {
         ...state,
         trailerId: action.payload,
-      }
+      };
     case CLEAR_TRAILER_ID:
       return {
         ...state,
         trailerId: null,
-      }
+      };
     default: return state;
   }
 };

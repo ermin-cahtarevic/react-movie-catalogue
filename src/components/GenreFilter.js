@@ -15,4 +15,8 @@ const GenreFilter = ({ changeFilter }) => (
   </select>
 );
 
+GenreFilter.propTypes = {
+  changeFilter: PropTypes.func.isRequired,
+};
+
 export default GenreFilter;

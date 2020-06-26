@@ -1,5 +1,5 @@
 const filterMovies = data => {
-  let result = []
+  const result = [];
   data.map(movie => (
     result.push({
       backdropPath: movie.backdrop_path,
@@ -11,7 +11,11 @@ const filterMovies = data => {
     })
   ));
 
-  return result; 
-}
+  return result;
+};
 
-export { filterMovies };
+const filterMovie = data => (
+  data
+);
+
+export { filterMovies, filterMovie };

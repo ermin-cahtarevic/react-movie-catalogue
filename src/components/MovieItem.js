@@ -11,7 +11,7 @@ const imgBaseUrl = 'https://image.tmdb.org/t/p/w500';
 const MovieItem = ({ movie, history }) => {
   const showMovie = id => history.push(`/movie/${id}`);
 
-  const genreList = movie.genreIds.map(gId => genres[gId])
+  const genreList = movie.genreIds.map(gId => genres[gId]);
 
   return (
     <div

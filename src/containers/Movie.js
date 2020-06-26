@@ -1,15 +1,18 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
+import YouTube from 'react-youtube';
+import PropTypes from 'prop-types';
 import fetchMovie from '../actions/fetchMovie';
 import Navbar from '../components/Navbar';
-import YouTube from 'react-youtube';
 import fetchTrailerId from '../actions/fetchTrailerId';
 import '../styles/movie.css';
 
 const imgBaseUrl = 'https://image.tmdb.org/t/p/w500';
 
-const Movie = ({ movies, match, fetchMovie, fetchTrailerId }) => {
+const Movie = ({
+  movies, match, fetchMovie, fetchTrailerId,
+}) => {
   const { params: { id } } = match;
   const { movie } = movies;
 
@@ -43,6 +46,13 @@ const Movie = ({ movies, match, fetchMovie, fetchTrailerId }) => {
       </div>
     </div>
   );
+};
+
+Movie.propTypes = {
+  movies: PropTypes.instanceOf(Object).isRequired,
+  match: PropTypes.instanceOf(Object).isRequired,
+  fetchMovie: PropTypes.func.isRequired,
+  fetchTrailerId: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = ({ movies }) => ({

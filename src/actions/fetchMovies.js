@@ -5,8 +5,7 @@ import { filterMovies } from '../helpers/filterData';
 
 const fetchMovies = () => dispatch => {
   axios.get(popularMoviesUrl).then(res => {
-    const filtered = filterMovies(res.data.results)
-    console.log(filtered)
+    const filtered = filterMovies(res.data.results);
     dispatch(getMovies(filtered));
   });
 };

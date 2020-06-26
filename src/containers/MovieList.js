@@ -9,7 +9,9 @@ import GenreFilter from '../components/GenreFilter';
 import '../styles/movie-list.css';
 import genres from '../helpers/genres';
 
-const MovieList = ({ movies, filter, fetchMovies, clearMovie, clearTrailerId, changeFilter }) => {
+const MovieList = ({
+  movies, filter, fetchMovies, clearMovie, clearTrailerId, changeFilter,
+}) => {
   useEffect(() => {
     fetchMovies();
     clearMovie();
@@ -20,10 +22,7 @@ const MovieList = ({ movies, filter, fetchMovies, clearMovie, clearTrailerId, ch
 
   const filterId = Object.keys(genres).filter(key => genres[key] === filter)[0];
 
-  const filtered = filter === 'All' ? movies.movies : movies.movies.filter(movie =>
-    movie.genreIds.includes(parseInt(filterId))
-  );
-
+  const filtered = filter === 'All' ? movies.movies : movies.movies.filter(movie => movie.genreIds.includes(parseInt(filterId, 10)));
 
   return (
     <div className="movie-list">
@@ -52,8 +51,11 @@ const MovieList = ({ movies, filter, fetchMovies, clearMovie, clearTrailerId, ch
 
 MovieList.propTypes = {
   movies: PropTypes.instanceOf(Object).isRequired,
+  filter: PropTypes.string.isRequired,
   fetchMovies: PropTypes.func.isRequired,
   clearMovie: PropTypes.func.isRequired,
+  clearTrailerId: PropTypes.func.isRequired,
+  changeFilter: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = ({ movies, filter }) => ({
