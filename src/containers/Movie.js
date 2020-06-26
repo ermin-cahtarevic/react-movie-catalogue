@@ -7,7 +7,7 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import fetchMovie from '../actions/fetchMovie';
 import Navbar from '../components/Navbar';
-import Recomendations from '../components/Recomendations';
+import Recommendations from '../components/Recommendations';
 import fetchTrailerId from '../actions/fetchTrailerId';
 import '../styles/movie.css';
 
@@ -89,7 +89,7 @@ const Movie = ({
         <a href={movie.homepage} className="movie-details-homepage">Movie homepage</a>
         <div className="movie-details-release-date">Release date - {getDate()}</div>
       </div>
-      <Recomendations id={movie.id} />
+      <Recommendations id={movie.id} />
     </div>
   );
 };

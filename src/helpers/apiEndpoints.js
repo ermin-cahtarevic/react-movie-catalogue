@@ -6,4 +6,4 @@ export const movieDetailsUrl = id => `https://api.themoviedb.org/3/movie/${id}?a
 
 export const movieTrailerUrl = id => `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${apiKey}`;
 
-export const recomendationsUrl = id => `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${apiKey}`;
+export const recommendationsUrl = id => `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${apiKey}`;

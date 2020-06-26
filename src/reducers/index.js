@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
 import moviesReducer from './movies';
 import filterReducer from './filter';
-import recomendationsReducer from './recomendations';
+import recommendationsReducer from './recommendations';
 
 const reducer = () => combineReducers({
   movies: moviesReducer,
   filter: filterReducer,
-  recomendations: recomendationsReducer,
+  recommendations: recommendationsReducer,
 });
 
 export default reducer;
