@@ -5,6 +5,7 @@ import fetchMovies from '../actions/fetchMovies';
 import MovieItem from '../components/MovieItem';
 import { clearMovie } from '../actions/index';
 import '../styles/movie-list.css';
+import Navbar from '../components/Navbar';
 
 const MovieList = ({ movies, fetchMovies, clearMovie }) => {
   useEffect(() => {
@@ -14,7 +15,7 @@ const MovieList = ({ movies, fetchMovies, clearMovie }) => {
 
   return (
     <div className="movie-list">
-      <h1>Movie List</h1>
+      <Navbar />
       <div className="movie-list-body">
         {
           /* eslint-disable react/prop-types */

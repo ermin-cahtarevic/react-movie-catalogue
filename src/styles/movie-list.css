@@ -1,8 +1,11 @@
 .movie-list {
   width: 100%;
+  background-color: #333333;
 }
 
 .movie-list-body {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  padding: 5px;
 }

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import fetchMovie from '../actions/fetchMovie';
+import Navbar from '../components/Navbar';
 
 const imgBaseUrl = 'https://image.tmdb.org/t/p/w500';
 
@@ -18,6 +19,7 @@ const Movie = ({ movies, match, fetchMovie }) => {
 
   const element = (
     <div>
+      <Navbar />
       <img src={imgBaseUrl + movie.poster_path} alt={movie.title} />
       <div className="movie-item-body">
         <h3>{movie.title}</h3>

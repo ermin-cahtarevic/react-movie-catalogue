@@ -2,12 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../styles/movie-item.css';
 import { withRouter } from 'react-router';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import genres from '../helpers/genres';
 
 const imgBaseUrl = 'https://image.tmdb.org/t/p/w500';
 
 const MovieItem = ({ movie, history }) => {
   const showMovie = id => history.push(`/movie/${id}`);
+
+  const genreList = movie.genre_ids.map(gId => genres[gId])
+
+  
+  console.log(genreList)
 
   return (
     <div
@@ -21,33 +28,36 @@ const MovieItem = ({ movie, history }) => {
       <div className="movie-item-body">
         <h3>{movie.title}</h3>
         <p>{movie.overview}</p>
+      </div>
+      <div className="genre-list">
         {
           /* eslint-disable react/prop-types */
-          movie.genre_ids.map(gId => (
-            <span key={gId} className="movie-item-genre">{genres[gId]}</span>
+          genreList.slice(0, 3).map(genreType => (
+            <span key={genreType} className="movie-item-genre">{genreType}</span>
           ))
           /* eslint-enable react/prop-types */
         }
       </div>
+      {
+        movie.vote_average > 0 ? (
+          <p className="rating">
+            <FontAwesomeIcon
+              icon={faStar}
+              className="star-icon"
+            />
+            {movie.vote_average}
+          </p>
+        ) : (
+          <p className="rating">Upcoming</p>
+        )
+      }
     </div>
   );
 };
 
 MovieItem.propTypes = {
-  movie: PropTypes.objectOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      title: PropTypes.string.isRequired,
-      backdrop_path: PropTypes.string.isRequired,
-      overview: PropTypes.string.isRequired,
-      genre_ids: PropTypes.instanceOf(Array),
-    }),
-  ).isRequired,
-  history: PropTypes.objectOf(
-    PropTypes.shape({
-      push: PropTypes.func.isRequired,
-    }),
-  ).isRequired,
+  movie: PropTypes.instanceOf(Object).isRequired,
+  history: PropTypes.instanceOf(Object).isRequired,
 };
 
 export default withRouter(MovieItem);
