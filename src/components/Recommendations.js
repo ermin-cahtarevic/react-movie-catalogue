@@ -10,7 +10,9 @@ const Recommendations = ({ id, recommendations, fetchRecommendations }) => {
   }, [fetchRecommendations, id]);
 
   return (
-    <div className="recommendations-list">
+    <div>
+      <h3 className="recommendations-header">Recommendations</h3>
+      <div className="recommendations-list">
       {
         recommendations.map(movie => (
           <MovieItem
@@ -19,6 +21,7 @@ const Recommendations = ({ id, recommendations, fetchRecommendations }) => {
           />
         ))
       }
+    </div>
     </div>
   )
 };
