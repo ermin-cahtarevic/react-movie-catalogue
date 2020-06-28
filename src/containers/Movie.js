@@ -5,11 +5,14 @@ import YouTube from 'react-youtube';
 import PropTypes from 'prop-types';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Loader from 'react-loader-spinner';
 import fetchMovie from '../actions/fetchMovie';
 import Navbar from '../components/Navbar';
 import Recommendations from '../components/Recommendations';
 import fetchTrailerId from '../actions/fetchTrailerId';
+import FourOFour from '../components/404';
 import '../styles/movie.css';
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 
 const imgBaseUrl = 'https://image.tmdb.org/t/p/w500';
 
@@ -40,8 +43,22 @@ const Movie = ({
     }
     return date;
   };
+
+  if (movies.movieLoading) {
+    return (
+      <div>
+        <Navbar />
+        <div className="loading">
+          <Loader
+            type="TailSpin"
+            color="#fff"
+          />
+        </div>
+      </div>
+    );
+  };
   
-  return (
+  const view = movie ? (
     <div className="movie-page">
       <Navbar />
       <div className="movie-assets">
@@ -91,7 +108,11 @@ const Movie = ({
       </div>
       <Recommendations id={movie.id} />
     </div>
+  ) : (
+    <FourOFour />
   );
+
+  return view;
 };
 
 Movie.propTypes = {

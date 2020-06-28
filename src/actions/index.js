@@ -5,6 +5,7 @@ const GET_TRAILER_ID = 'GET_TRAILER_ID';
 const CLEAR_TRAILER_ID = 'CLEAR_TRAILER_ID';
 const CHANGE_FILTER = 'CHANGE_FILTER';
 const GET_RECOMMENDATIONS = 'GET_RECOMMENDATIONS';
+const MOVIE_NOT_FOUND = 'MOVIE_NOT_FOUND';
 
 const getMovies = movies => ({
   type: GET_MOVIES,
@@ -39,6 +40,10 @@ const getRecommendations = data => ({
   payload: data,
 });
 
+const movieNotFound = () => ({
+  type: MOVIE_NOT_FOUND,
+});
+
 export {
-  getMovies, getMovie, clearMovie, getTrailerId, clearTrailerId, changeFilter, getRecommendations
+  getMovies, getMovie, clearMovie, getTrailerId, clearTrailerId, changeFilter, getRecommendations, movieNotFound,
 };
