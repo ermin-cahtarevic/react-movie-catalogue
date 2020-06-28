@@ -29,3 +29,16 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.movies-not-loaded {
+  background-color: #333;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.movies-not-loaded h2 {
+  color: white;
+  font-size: 32px;
+}

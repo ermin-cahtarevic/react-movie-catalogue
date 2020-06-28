@@ -3,9 +3,11 @@ const GET_MOVIE = 'GET_MOVIE';
 const CLEAR_MOVIE = 'CLEAR_MOVIE';
 const GET_TRAILER_ID = 'GET_TRAILER_ID';
 const CLEAR_TRAILER_ID = 'CLEAR_TRAILER_ID';
+const MOVIES_NOT_FOUND = 'MOVIES_NOT_FOUND';
 const MOVIE_NOT_FOUND = 'MOVIE_NOT_FOUND';
 
 const initialState = {
+  moviesLoading: true,
   movies: [],
   movieLoading: true,
   movie: {},
@@ -17,11 +19,13 @@ const moviesReducer = (state = initialState, action) => {
     case GET_MOVIES:
       return {
         ...state,
+        moviesLoading: false,
         movies: [...action.payload],
       };
     case GET_MOVIE:
       return {
         ...state,
+        moviesLoading: true,
         movieLoading: false,
         movie: action.payload,
       };
@@ -40,6 +44,12 @@ const moviesReducer = (state = initialState, action) => {
       return {
         ...state,
         trailerId: null,
+      };
+    case MOVIES_NOT_FOUND:
+      return {
+        ...state,
+        moviesLoading: false,
+        movies: null,
       };
     case MOVIE_NOT_FOUND:
       return {

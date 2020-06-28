@@ -8,6 +8,7 @@ import Navbar from '../components/Navbar';
 import GenreFilter from '../components/GenreFilter';
 import '../styles/movie-list.css';
 import genres from '../helpers/genres';
+import Loading from '../components/Loading';
 
 const MovieList = ({
   movies, filter, fetchMovies, clearMovie, clearTrailerId, changeFilter,
@@ -19,6 +20,21 @@ const MovieList = ({
   }, [fetchMovies, clearMovie, clearTrailerId]);
 
   const handleFilterChange = filter => changeFilter(filter);
+
+  if (movies.moviesLoading) {
+    return <Loading />;
+  };
+
+  if (movies.movies === null) {
+    return (
+      <div>
+        <Navbar />
+        <div className="movies-not-loaded">
+          <h2>Error occured. Please try again.</h2>
+        </div>
+      </div>
+    );
+  };
 
   const filterId = Object.keys(genres).filter(key => genres[key] === filter)[0];
 

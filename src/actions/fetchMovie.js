@@ -13,6 +13,7 @@ const fetchMovie = id => dispatch => {
     if (err.response.status === 404) {
       dispatch(movieNotFound());
     };
+    console.log(err.response);
   });
 };
 

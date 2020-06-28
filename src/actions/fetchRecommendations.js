@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { getRecommendations } from './index';
+import { getRecommendations, noRecommendations } from './index';
 import { recommendationsUrl } from '../helpers/apiEndpoints';
 import { filterMovies } from '../helpers/filterData';
 
@@ -9,6 +9,9 @@ const fetchRecommendations = id => dispatch => {
   axios.get(url).then(res => {
     const filtered = filterMovies(res.data.results)
     dispatch(getRecommendations(filtered));
+  }).catch(err => {
+    dispatch(noRecommendations());
+    console.log(err.response);
   });
 };
 

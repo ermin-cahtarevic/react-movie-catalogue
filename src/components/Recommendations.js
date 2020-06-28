@@ -14,12 +14,16 @@ const Recommendations = ({ id, recommendations, fetchRecommendations }) => {
       <h3 className="recommendations-header">Recommendations</h3>
       <div className="recommendations-list">
       {
-        recommendations.map(movie => (
-          <MovieItem
-            movie={movie}
-            key={movie.id.toString()}
-          />
-        ))
+        recommendations === null ? (
+          <div>Error loading recommendations.</div>
+        ) : (
+          recommendations.map(movie => (
+            <MovieItem
+              movie={movie}
+              key={movie.id.toString()}
+            />
+          ))
+        )
       }
     </div>
     </div>
