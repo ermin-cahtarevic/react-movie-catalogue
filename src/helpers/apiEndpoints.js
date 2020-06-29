@@ -7,3 +7,5 @@ export const movieDetailsUrl = id => `https://api.themoviedb.org/3/movie/${id}?a
 export const movieTrailerUrl = id => `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${apiKey}`;
 
 export const recommendationsUrl = id => `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${apiKey}`;
+
+export const searchUrl = query => `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${query}&include_adult=false`;

@@ -1,11 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import '../styles/navbar.css';
+import Search from './Search';
 
-const Navbar = () => (
-  <div className="navbar">
-    <Link to="/" className="logo">Movie Catalogue</Link>
-  </div>
-);
+const Navbar = ({ movieSearch }) => {
+  const location = useLocation();
+  return (
+    <div className="navbar">
+      <Link to="/" className="logo">Movie Catalogue</Link>
+      {
+        location.pathname === '/' ? (
+          <Search movieSearch={movieSearch} />
+        ) : null
+      }
+    </div>
+  );
+}
 
 export default Navbar;

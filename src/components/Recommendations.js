@@ -14,8 +14,8 @@ const Recommendations = ({ id, recommendations, fetchRecommendations }) => {
       <h3 className="recommendations-header">Recommendations</h3>
       <div className="recommendations-list">
       {
-        recommendations === null ? (
-          <div>Error loading recommendations.</div>
+        recommendations.length < 1 ? (
+          <div>No recommendations found.</div>
         ) : (
           recommendations.map(movie => (
             <MovieItem

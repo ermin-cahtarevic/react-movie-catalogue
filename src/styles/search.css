@@ -1,0 +1,21 @@
+.search-form {
+  padding: 0 10px;
+  display: flex;
+}
+
+.search-input {
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+.search-btn {
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: #333;
+  border: 1px solid white;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+}
