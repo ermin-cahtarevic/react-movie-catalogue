@@ -51,13 +51,25 @@ const Movie = ({
     <div className="movie-page">
       <Navbar />
       <div className="movie-assets">
-        <img src={imgBaseUrl + movie.posterPath} alt={movie.title} className="movie-poster" />
-        <YouTube
-          videoId={movies.trailerId}
-          opts={opts}
-          containerClassName="movie-trailer"
-          className="trailer-video"
-        />
+        {
+          movie.posterPath ? (
+            <img src={imgBaseUrl + movie.posterPath} alt={movie.title} className="movie-poster" />
+          ) : (
+            <div className="fake-img">No image found</div>
+          )
+        }
+        {
+          movies.trailerId ? (
+            <YouTube
+              videoId={movies.trailerId}
+              opts={opts}
+              containerClassName="movie-trailer"
+              className="trailer-video"
+            />
+          ) : (
+            <div className="fake-video">No video trailer found</div>
+          )
+        }
       </div>
       <div className="movie-details-body">
         <div className="movie-details-first-line">

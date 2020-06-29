@@ -6,7 +6,11 @@ const fetchTrailerId = id => dispatch => {
   const url = movieTrailerUrl(id);
 
   axios.get(url).then(res => {
-    dispatch(getTrailerId(res.data.results[0].key));
+    if (res.data.results[0] === undefined) {
+      dispatch(getTrailerId(null));
+    } else {
+      dispatch(getTrailerId(res.data.results[0].key));
+    }
   });
 };
 

@@ -11,8 +11,26 @@
   width: 25%;
 }
 
+.fake-img {
+  width: 25%;
+  height: 715px;
+  text-align: center;
+  line-height: 715px;
+  font-size: 30px;
+  color: white;
+}
+
 .movie-trailer {
   width: 75%;
+}
+
+.fake-video {
+  width: 75%;
+  height: 715px;
+  text-align: center;
+  line-height: 715px;
+  font-size: 30px;
+  color: white;
 }
 
 .trailer-video {
