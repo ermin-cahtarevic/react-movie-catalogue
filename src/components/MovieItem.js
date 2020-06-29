@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import genres from '../helpers/genres';
 
 const imgBaseUrl = 'https://image.tmdb.org/t/p/w500';
+/* eslint-disable no-nested-ternary */
 
 const MovieItem = ({ movie, history }) => {
   const showMovie = id => history.push(`/movie/${id}`);
@@ -25,15 +26,15 @@ const MovieItem = ({ movie, history }) => {
         movie.backdropPath ? (
           <img src={imgBaseUrl + movie.backdropPath} alt={movie.title} className="movie-item-img" />
         ) : (
-            movie.posterPath ? (
-              <img src={imgBaseUrl + movie.posterPath} alt={movie.title} className="movie-item-img" />
-            ) : (
-              <img src="/logo512.png" alt={movie.title} className="movie-item-img" />
-            )
-          
+          movie.posterPath ? (
+            <img src={imgBaseUrl + movie.posterPath} alt={movie.title} className="movie-item-img" />
+          ) : (
+            <img src="/logo512.png" alt={movie.title} className="movie-item-img" />
+          )
+
         )
       }
-      
+
       <div className="movie-item-body">
         <h3>{movie.title}</h3>
         <p>{movie.overview}</p>

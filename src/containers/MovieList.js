@@ -23,7 +23,7 @@ const MovieList = ({
 
   if (movies.moviesLoading) {
     return <Loading />;
-  };
+  }
 
   if (movies.movies === null) {
     return (
@@ -34,7 +34,7 @@ const MovieList = ({
         </div>
       </div>
     );
-  };
+  }
 
   const filterId = Object.keys(genres).filter(key => genres[key] === filter)[0];
 

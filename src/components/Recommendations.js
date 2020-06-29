@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import fetchRecommendations from '../actions/fetchRecommendations';
 import MovieItem from './MovieItem';
@@ -13,7 +14,7 @@ const Recommendations = ({ id, recommendations, fetchRecommendations }) => {
     <div>
       <h3 className="recommendations-header">Recommendations</h3>
       <div className="recommendations-list">
-      {
+        {
         recommendations.length < 1 ? (
           <div>No recommendations found.</div>
         ) : (
@@ -25,9 +26,15 @@ const Recommendations = ({ id, recommendations, fetchRecommendations }) => {
           ))
         )
       }
+      </div>
     </div>
-    </div>
-  )
+  );
+};
+
+Recommendations.propTypes = {
+  id: PropTypes.number.isRequired,
+  recommendations: PropTypes.instanceOf(Object).isRequired,
+  fetchRecommendations: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = ({ recommendations }) => ({

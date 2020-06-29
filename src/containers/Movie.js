@@ -33,7 +33,7 @@ const Movie = ({
     },
   };
 
-  let date = 'Loading...'
+  let date = 'Loading...';
 
   const getDate = () => {
     if (movie.releaseDate) {
@@ -44,9 +44,9 @@ const Movie = ({
   };
 
   if (movies.movieLoading) {
-    return <Loading />
-  };
-  
+    return <Loading />;
+  }
+
   const view = movie ? (
     <div className="movie-page">
       <Navbar />
@@ -82,7 +82,7 @@ const Movie = ({
             {
               movie.voteAverage > 0 ? (
                 movie.voteAverage
-              ) :(
+              ) : (
                 'Upcoming'
               )
             }
@@ -90,22 +90,29 @@ const Movie = ({
         </div>
         {
           movie.tagline ? (
-            <p className="movie-details-tagline">"{movie.tagline}"</p>
+            <p className="movie-details-tagline">
+              &quot;
+              {movie.tagline}
+              &quot;
+            </p>
           ) : null
         }
         <p className="movie-details-overview">{movie.overview}</p>
         <div>
           {
             movie.genres ? (
-            movie.genres.map(genre => (
-              <span key={genre.id} className="movie-details-genre">{genre.name}</span>
-            ))) : (
-              <div>Loading...</div>
+              movie.genres.map(genre => (
+                <span key={genre.id} className="movie-details-genre">{genre.name}</span>
+              ))) : (
+                <div>Loading...</div>
             )
           }
         </div>
         <a href={movie.homepage} className="movie-details-homepage">Movie homepage</a>
-        <div className="movie-details-release-date">Release date - {getDate()}</div>
+        <div className="movie-details-release-date">
+          Release date -
+          {getDate()}
+        </div>
       </div>
       <Recommendations id={movie.id} />
     </div>

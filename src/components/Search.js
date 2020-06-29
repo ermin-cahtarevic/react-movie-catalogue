@@ -12,7 +12,7 @@ const Search = () => {
     e.preventDefault();
     searchMovies(query)(dispatch);
     handleChange('');
-  }
+  };
 
   return (
     <form onSubmit={handleSubmit} className="search-form">
@@ -30,6 +30,6 @@ const Search = () => {
       />
     </form>
   );
-}
+};
 
 export default Search;

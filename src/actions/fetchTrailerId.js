@@ -11,6 +11,8 @@ const fetchTrailerId = id => dispatch => {
     } else {
       dispatch(getTrailerId(res.data.results[0].key));
     }
+  }).catch(err => {
+    throw (err);
   });
 };
 

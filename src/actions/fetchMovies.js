@@ -9,7 +9,7 @@ const fetchMovies = () => dispatch => {
     dispatch(getMovies(filtered));
   }).catch(err => {
     dispatch(moviesNotFound());
-    console.log(err.response);
+    throw (err);
   });
 };
 

@@ -7,11 +7,11 @@ const fetchRecommendations = id => dispatch => {
   const url = recommendationsUrl(id);
 
   axios.get(url).then(res => {
-    const filtered = filterMovies(res.data.results)
+    const filtered = filterMovies(res.data.results);
     dispatch(getRecommendations(filtered));
   }).catch(err => {
     dispatch(noRecommendations());
-    console.log(err.response);
+    throw (err);
   });
 };
 

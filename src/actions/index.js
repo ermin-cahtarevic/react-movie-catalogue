@@ -55,5 +55,6 @@ const movieNotFound = () => ({
 });
 
 export {
-  getMovies, getMovie, clearMovie, getTrailerId, clearTrailerId, changeFilter, getRecommendations, noRecommendations, moviesNotFound, movieNotFound,
+  getMovies, getMovie, clearMovie, getTrailerId, clearTrailerId, changeFilter, getRecommendations,
+  noRecommendations, moviesNotFound, movieNotFound,
 };
