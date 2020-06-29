@@ -17,11 +17,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.movie-list-body h2 {
-  color: white;
-  margin: 15px 0;
+  padding: 10px 0;
 }
 
 .movie-list-movies {

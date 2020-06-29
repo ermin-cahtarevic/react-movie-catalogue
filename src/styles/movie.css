@@ -16,7 +16,7 @@
   height: 715px;
   text-align: center;
   line-height: 715px;
-  font-size: 30px;
+  font-size: 24px;
   color: white;
 }
 
@@ -29,7 +29,7 @@
   height: 715px;
   text-align: center;
   line-height: 715px;
-  font-size: 30px;
+  font-size: 24px;
   color: white;
 }
 
@@ -41,7 +41,7 @@
 .movie-details-body {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 25px 0;
+  padding: 25px 15px;
 }
 
 .movie-details-first-line {
@@ -112,4 +112,26 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .movie-assets {
+    flex-direction: column;
+  }
+
+  .movie-poster {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+  }
+
+  .movie-trailer {
+    width: 100%;
+    height: 300px;
+  }
+
+  .fake-img,
+  .fake-video {
+    display: none;
+  }
 }

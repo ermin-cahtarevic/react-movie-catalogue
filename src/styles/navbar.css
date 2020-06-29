@@ -21,3 +21,16 @@
 .logo:hover {
   color: #ddd;
 }
+
+@media only screen and (max-width: 768px) {
+  .navbar {
+    height: auto;
+    flex-direction: column;
+    padding: 20px 50px;
+  }
+
+  .logo {
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+}

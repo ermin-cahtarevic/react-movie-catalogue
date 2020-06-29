@@ -29,7 +29,7 @@ const Movie = ({
   const opts = {
     playerVars: {
       // https://developers.google.com/youtube/player_parameters
-      autoplay: 0, // 1 or 0 for autoplay on - off
+      autoplay: 1, // 1 or 0 for autoplay on - off
     },
   };
 
