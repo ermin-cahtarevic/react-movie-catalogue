@@ -1,68 +1,103 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### React Movie Catalogue
 
-## Available Scripts
+> Microverse description - Catalogue of Dog Clothes
 
-In the project directory, you can run:
+## Table of Contents
 
-### `yarn start`
+* [About the Project](#about-the-project)
+  * [Built With](#built-with)
+* [Setup](#setup)
+* [Author](#author)
+* [Show your Support](#show-your-support)
+* [Acknowledgements](#acknowledgements)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Home
 
-### `yarn test`
+<p align="center">
+  <img src="./public/MC-home-screen.png">
+</p>
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Movie details
 
-### `yarn build`
+<p align="center">
+  <img src="./public/MC-movie-details.png">
+</p>
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Mobile
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+<p align="center">
+  <img src="./public/MC-home-mobile.png">
+</p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The project is based on a catalogue of clothes for dogs. That was the base idea for the project.
+The original theme was just an example, for this project I needed to create a React and Redux SPA - that had a home page for browsing through the catalogue items, and a details page for one of the catalogue items.
 
-### `yarn eject`
+For this project I decided to use the [TMDB - API](https://www.themoviedb.org/) to create a Movie Catalogue.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+On the Home page, when you first enter the app, you can see a list of todays most popular movies. Through there you can either open one of the listed movies, or search for a different movie. 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Live version of the project: [Live version](https://movie-catalogue.netlify.app/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Project Link: [React-Movie-Catalogue](https://github.com/ermin-cahtarevic/react-movie-catalogue)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+### Built With
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+*   React
+*   Redux
+*   [TMBD - API](https://www.themoviedb.org/)
+*   npm
+*   CSS
+*   ES6
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Setup
 
-### Code Splitting
+```
+git clone git@github.com:ermin-cahtarevic/react-movie-catalogue.git
+```
+### Install dependencies
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+```
+npm install
+```
 
-### Analyzing the Bundle Size
+### Start Development Server
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+```
+npm start
+```
+### Visit this link in your browser
+```
+http://localhost:3000/
+```
 
-### Making a Progressive Web App
+### Run ESlint
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+```
+npx eslint .
+```
+### Run Stylelint
 
-### Advanced Configuration
+```
+npx stylelint "**/*.{css,scss}"
+```
+<!-- CONTACT -->
+## Author
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+- Github: [@ermin-cahtarevic](https://github.com/ermin-cahtarevic)
+- Twitter: [@ErminCahtarevic](https://twitter.com/ErminCahtarevic)
+- Linkedin: [Ermin Cahtarevic](https://www.linkedin.com/in/ermincahtarevic/)
 
-### Deployment
+<!-- ABOUT THE PROJECT-->
+## Show your support
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+Give a star if you like this project!
 
-### `yarn build` fails to minify
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+* [Microverse](https://www.microverse.org/)
+* [TMBD - API](https://www.themoviedb.org/)
