@@ -1,9 +1,9 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
 import '../styles/navbar.css';
 import Search from './Search';
 import fetchMovies from '../actions/fetchMovies';
-import { useDispatch } from 'react-redux';
 
 const Navbar = () => {
   const location = useLocation();
@@ -20,7 +20,7 @@ const Navbar = () => {
         className="logo"
         onClick={() => handleClick()}
       >
-      Movie Catalogue
+        Movie Catalogue
       </Link>
       {
         location.pathname === '/' ? (
