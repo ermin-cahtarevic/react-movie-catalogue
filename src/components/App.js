@@ -7,20 +7,22 @@ import FourOFour from './404';
 
 function App() {
   return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <Switch>
-        <Route exact path="/">
-          <MovieList />
-        </Route>
-        <Route exact path="/movie/:id">
-          <Movie />
-        </Route>
-        <Route path="/404">
-          <FourOFour />
-        </Route>
-      </Switch>
-    </BrowserRouter>
+    <div className="app">
+      <BrowserRouter>
+        <ScrollToTop />
+        <Switch>
+          <Route exact path="/">
+            <MovieList />
+          </Route>
+          <Route exact path="/movie/:id">
+            <Movie />
+          </Route>
+          <Route path="/404">
+            <FourOFour />
+          </Route>
+        </Switch>
+      </BrowserRouter>
+    </div>
   );
 }
 
