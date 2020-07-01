@@ -11,7 +11,7 @@ const Recommendations = ({ id, recommendations, fetchRecommendations }) => {
   }, [fetchRecommendations, id]);
 
   return (
-    <div>
+    <div className="recommendations">
       <h3 className="recommendations-header">Recommendations</h3>
       <div className="recommendations-list">
         {
