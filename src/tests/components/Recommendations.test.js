@@ -7,7 +7,7 @@ const setup = ({ id, recommendations, fetchRecommendations }) => shallow(
     id={id}
     recommendations={recommendations}
     fetchRecommendations={fetchRecommendations}
-  />
+  />,
 );
 
 describe('Recommendations component', () => {
@@ -29,6 +29,6 @@ describe('Recommendations component', () => {
     expect(header.text()).toEqual('Recommendations');
 
     const list = element.find('.recommendations-list');
-    expect(list.text()).toEqual('No recommendations found.')
+    expect(list.text()).toEqual('No recommendations found.');
   });
 });

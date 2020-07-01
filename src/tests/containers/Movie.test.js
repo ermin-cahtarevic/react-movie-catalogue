@@ -2,13 +2,15 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Movie from '../../containers/Movie';
 
-const setup = ({ movies, match, fetchMovie, fetchTrailerId }) => shallow(
+const setup = ({
+  movies, match, fetchMovie, fetchTrailerId,
+}) => shallow(
   <Movie.WrappedComponent
     movies={movies}
     match={match}
     fetchMovie={fetchMovie}
-    fetchTrailerId={fetchTrailerId} 
-  />
+    fetchTrailerId={fetchTrailerId}
+  />,
 );
 
 const imgBaseUrl = 'https://image.tmdb.org/t/p/w500';
@@ -34,7 +36,7 @@ describe('Movie container', () => {
         movie,
       },
       match: {
-        params: { id: 550 }
+        params: { id: 550 },
       },
       fetchMovie: () => null,
       fetchTrailerId: () => null,
@@ -53,7 +55,7 @@ describe('Movie container', () => {
     const tagline = container.find('.movie-details-tagline');
     expect(h3.text()).toEqual(movie.title);
     expect(p.text()).toEqual(movie.overview);
-    expect(tagline.text()).toEqual( '"' + movie.tagline + '"');
+    expect(tagline.text()).toEqual(`"${movie.tagline}"`);
 
     const genres = container.find('.genre-list');
     const genreItems = genres.children('.movie-details-genre');

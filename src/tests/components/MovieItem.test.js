@@ -2,7 +2,12 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import MovieItem from '../../components/MovieItem';
 
-const setup = ({ movie, history }) => shallow(<MovieItem.WrappedComponent movie={movie} history={history} />);
+const setup = ({ movie, history }) => shallow(
+  <MovieItem.WrappedComponent
+    movie={movie}
+    history={history}
+  />,
+);
 
 const imgBaseUrl = 'https://image.tmdb.org/t/p/w500';
 
@@ -14,7 +19,7 @@ const movie = {
   title: 'Title',
   voteAverage: '8.5',
   overview: 'Overview',
-}
+};
 
 describe('Movie Item component', () => {
   let component;
