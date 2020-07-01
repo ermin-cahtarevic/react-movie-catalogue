@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Movie from '../../containers/Movie';
+import { movie } from '../helper/helper';
 
 const setup = ({
   movies, match, fetchMovie, fetchTrailerId,
@@ -14,17 +15,6 @@ const setup = ({
 );
 
 const imgBaseUrl = 'https://image.tmdb.org/t/p/w500';
-
-const movie = {
-  backdropPath: null,
-  posterPath: '/some-path',
-  id: 550,
-  genreIds: [],
-  title: 'Title',
-  voteAverage: '8.5',
-  overview: 'Overview',
-  tagline: 'Tagline',
-};
 
 describe('Movie container', () => {
   let container;
