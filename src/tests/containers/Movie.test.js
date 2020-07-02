@@ -47,7 +47,7 @@ describe('Movie container', () => {
     expect(p.text()).toEqual(movie.overview);
     expect(tagline.text()).toEqual(`"${movie.tagline}"`);
 
-    const genres = container.find('.genre-list');
+    const genres = container.find('.movie-genre-list');
     const genreItems = genres.children('.movie-details-genre');
     expect(genres.length).toEqual(1);
     expect(genreItems.length).toEqual(0);

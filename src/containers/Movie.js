@@ -98,7 +98,7 @@ const Movie = ({
           ) : null
         }
         <p className="movie-details-overview">{movie.overview}</p>
-        <div className="genre-list">
+        <div className="movie-genre-list">
           {
             movie.genres ? (
               movie.genres.map(genre => (
