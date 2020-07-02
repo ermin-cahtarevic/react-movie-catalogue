@@ -1,0 +1,13 @@
+.recommendations-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 5px 10px;
+}
+
+.recommendations-header {
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  margin: 5px 0 15px;
+}

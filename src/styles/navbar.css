@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.navbar {
+  height: 90px;
+  background-color: #333;
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid white;
+}
+
+.logo {
+  color: white;
+  text-decoration: none;
+  font-size: 35px;
+  text-transform: uppercase;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.logo:hover {
+  color: #ddd;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar {
+    height: auto;
+    flex-direction: column;
+    padding: 20px 50px;
+  }
+
+  .logo {
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,18 @@
+.genre-filter {
+  background-color: transparent;
+  color: white;
+  font-size: 16px;
+  padding: 5px;
+  border: 1px solid white;
+  border-radius: 5px;
+  width: 250px;
+}
+
+.genre-filter option {
+  background-color: #333;
+}
+
+.genre-filter:hover,
+.genre-filter option:hover {
+  cursor: pointer !important;
+}
