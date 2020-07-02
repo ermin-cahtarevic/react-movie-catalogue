@@ -84,6 +84,13 @@ npx eslint .
 ```
 npx stylelint "**/*.{css,scss}"
 ```
+
+### Run tests
+
+```
+npm test
+```
+
 <!-- CONTACT -->
 ## Author
 
